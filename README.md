@@ -1,3 +1,7 @@
 # Quasar App
 
-> WIP
+> install quasar-cli
+> install vue-cli
+
+> yarn install
+> quasar-dev
