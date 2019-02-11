@@ -19,6 +19,13 @@ module.exports = function (ctx) {
     ],
     supportIE: true,
     build: {
+      env: ctx.dev ? {
+        API: JSON.stringify('http://viladosilicio.com.br/wp-json/wp')
+      }
+      :
+      {
+        API: JSON.stringify('http://viladosilicio.com.br/wp-json/wp')
+      },
       scopeHoisting: true,
       vueRouterMode: 'history',
       // vueCompiler: true,
