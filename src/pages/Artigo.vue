@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <span class="q-display-2"> {{artigo.title.rendered }} </span>
+    <span class="q-display-2"> {{artigo.title.rendered }}</span>
     <div class="row">
       <div class="col" v-html="artigo.content.rendered ">
       </div>

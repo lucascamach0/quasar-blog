@@ -7,7 +7,7 @@
                     <img :src="post.better_featured_image.source_url" style="width: 30rem">
                 </q-card-media>
                 <q-card-title>
-                    {{ post.title.rendered }}
+                    {{ post.title.rendered }} 12312321
                 </q-card-title>
                 <q-card-separator/>
                 <q-card-actions>
@@ -34,8 +34,8 @@ export default Vue.extend({
         ...mapState('posts',['posts'])
     },
     methods : {
-        ...mapActions('posts',['setPosts']),
-        ...mapMutations('post',['CLEAR_ARTIGO']),
+        ...mapActions('posts', ['setPosts']),
+        ...mapMutations('posts', ['CLEAR_ARTIGO']),
         detalhar (id){
             this.$router.push(`artigo/${id}`)
         }
