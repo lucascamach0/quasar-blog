@@ -1,7 +1,7 @@
 # Quasar App
 
 pré requisitos
-> install quasar-cli
+> install quasar-cli, 
 > install vue-cli
 
 instalar dependencias
@@ -12,4 +12,7 @@ run
 
 build
 > quasar build -m pwa
+
+Testar build gerado, entre na pasta dist
+> quasar serve
 
