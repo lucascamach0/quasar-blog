@@ -11,7 +11,7 @@
                 </q-card-title>
                 <q-card-separator/>
                 <q-card-actions>
-                    <q-btn push color="dark" label="Detalhes" class="full-width" />
+                    <q-btn push color="dark" label="Detalhes" class="full-width" @click="detalhar()" />
                 </q-card-actions> 
             </q-card>
         </div>
@@ -21,28 +21,23 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { mapActions, mapState } from 'vuex';
 export default Vue.extend({
     name: 'Posts',
-    data(){
-        return { 
-            posts :[]
-        }
-    },
 
     mounted(){
-        this.getPosts()
+        this.$q.loading.show()
+        this.setPosts()
+        .then(() =>{
+            this.$q.loading.hide()
+        })
+    },
+
+    computed: {
+        ...mapState('posts',['posts'])
     },
     methods : {
-        getPosts (){
-            this.$axios.get('http://viladosilicio.com.br/wp-json/wp/V2/posts')
-                .then((res) => {
-                    this.posts = res.data;
-                    console.log('POSTS',res.data)
-                })
-                .catch((err) =>{
-                    console.error(err)
-                })
-        }
+        ...mapActions('posts',['setPosts']),
     }
 })
 </script>
