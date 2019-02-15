@@ -9,8 +9,13 @@ const SET_ARTIGO = (state, dados) =>{
 const CLEAR_ARTIGO = (state) =>{
     state.artigo = {}
 }
+
+const SET_PUSH = (state, dados) => {
+    state.push = dados
+}
 export {
     SET_POSTS,
     SET_ARTIGO,
-    CLEAR_ARTIGO
+    CLEAR_ARTIGO,
+    SET_PUSH
 }

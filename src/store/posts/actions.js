@@ -39,7 +39,38 @@ const setArtigo = ({ commit }, id) =>{
     })
 }
 
+const enviarPush = ({ commit }, id) => {
+    const auth = {
+        'Content-Type': 'application/json',
+        'Authorization' : 'Basic OWE2ZmI5OWItZjc1YS00OGZiLTk5YmMtY2E4MzY2NGZkODVm'
+    }
+    let app_id = '03944af9-4d45-4c31-a3e7-8d07dfd1946d'
+    let contents = {
+        'en': 'Você clicou no artigo ' + id
+    }
+    let user = ["hermes-123"];
+    return new Promise((resolve, reject) => {
+        Vue.prototype.$axios.post('https://onesignal.com/api/v1/notifications', 
+        {
+            'app_id' : app_id,
+            'contents': contents,
+            'include_external_user_ids': user
+
+        },auth
+        ).then((res) => {
+            commit('SET_PUSH', res.data)
+            resolve(res.data)
+            console.log('Disparou push')
+        })
+        .catch((err) => {
+            console.error('ERRO AQUI: ' + err)
+            reject(err)
+        })
+    })
+}
+
 export{
     setPosts,
-    setArtigo
+    setArtigo,
+    enviarPush
 }
