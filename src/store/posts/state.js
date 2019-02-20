@@ -1,5 +1,6 @@
 export default {
   posts: [],
   artigo: {},
-  push: {}
+  push: {},
+  cases: []
 }

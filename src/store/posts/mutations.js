@@ -13,9 +13,14 @@ const CLEAR_ARTIGO = (state) =>{
 const SET_PUSH = (state, dados) => {
     state.push = dados
 }
+
+const SET_CASES = (state, dados) => {
+    state.cases = dados
+}
 export {
     SET_POSTS,
     SET_ARTIGO,
     CLEAR_ARTIGO,
-    SET_PUSH
+    SET_PUSH,
+    SET_CASES
 }
