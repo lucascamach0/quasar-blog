@@ -1,8 +1,8 @@
 {
-  "name": "poc-quasar",
+  "name": "anima-notificacao",
   "version": "0.0.1",
   "description": "A poc for quasar framework",
-  "productName": "Poc Quasar",
+  "productName": "Anima Notificação",
   "cordovaId": "org.cordova.quasar.app",
   "author": "lcamacho@ciandt.com",
   "private": true,

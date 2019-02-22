@@ -1,0 +1,20 @@
+{
+    "Materias": {
+        "Calculo 1": [
+            {"Prova 1":10},
+            {"Prova 2":20},
+            {"Prova 3":10}
+        ],
+        "Programação 1": [
+            {"Prova 1":10},
+            {"Prova 2":20},
+            {"Prova 3":10}
+        ],
+        "Estrutura de Dados": [
+            {"Prova 1":10},
+            {"Prova 2":20},
+            {"Prova 3":10}
+        ]
+        
+    }
+}

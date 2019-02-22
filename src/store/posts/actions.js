@@ -70,7 +70,6 @@ const enviarPush = ({ commit }, id) => {
 }
 
 const setCases = ({ commit }) =>{
-    console.log("entrou aqui")
     return new Promise((resolve, reject) => {
         Vue.prototype.$axios.get('http://cloud-dev.animaeducacao.com.br/salesforce/services/api/SalesForce/317117479')
         .then((res) => {

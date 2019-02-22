@@ -1,26 +1,15 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout style="background-color: white" view="lHh Lpr lFf">
     <q-layout-header>
-      <q-toolbar color="negative" :glossy="$q.theme === 'mat'" :inverted="$q.theme === 'ios'">
+      <q-toolbar id="cabecalho">
         <q-btn flat dense round @click="leftDrawerOpen = !leftDrawerOpen" aria-label="Menu">
           <q-icon name="menu"/>
         </q-btn>
 
-        <q-toolbar-title>App PoC CiandT
-        </q-toolbar-title>
-
-        <q-btn-dropdown icon="notifications_active" label="10">
-          <q-list link>
-            <q-item v-for="(post, index) in posts" :key="index" v-close-overlay @click.native="handlerFunction">
-              <q-item-side icon="folder" inverted color="primary"/>
-              <q-item-main>
-                <q-item-tile label>Photos</q-item-tile>
-                <q-item-tile sublabel>February 22, 2016</q-item-tile>
-              </q-item-main>
-              <q-item-side right icon="info" color="amber"/>
-            </q-item>
-          </q-list>
-        </q-btn-dropdown>
+        <q-toolbar-title>Ânima Notificação</q-toolbar-title>
+        <q-btn icon="notifications" to="/notificacoes">
+          <q-chip floating>22</q-chip>
+        </q-btn>
       </q-toolbar>
     </q-layout-header>
 
@@ -30,10 +19,6 @@
     >
       <q-list no-border link inset-delimiter>
         <q-list-header>Menu</q-list-header>
-        <q-item to="/">
-          <q-item-side icon="home"/>
-          <q-item-main label="Dashboard"/>
-        </q-item>
         <q-item to="/posts">
           <q-item-side icon="list_alt"/>
           <q-item-main label="Postagens" sublabel="Lista de postagem"/>
@@ -47,15 +32,21 @@
   </q-layout>
 </template>
 
+<style>
+#cabecalho {
+  background-image: linear-gradient(81deg, #992096, #992096) !important;
+}
+</style>
+
 <script>
 import { openURL } from "quasar";
-import { mapActions, mapState, mapMutations } from 'vuex';
+import { mapActions, mapState, mapMutations } from "vuex";
 
 export default {
   name: "MyLayout",
 
-  mounted(){
-        this.setCases()
+  mounted() {
+    this.setCases();
   },
 
   data() {
@@ -65,10 +56,10 @@ export default {
   },
 
   computed: {
-        ...mapState('posts',['cases'])
-    },
+    ...mapState("posts", ["cases"])
+  },
   methods: {
-    ...mapActions('posts', ['setCases']),
+    ...mapActions("posts", ["setCases"]),
     openURL
   }
 };
